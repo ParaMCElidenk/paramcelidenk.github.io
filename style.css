@@ -22,3 +22,11 @@ header {
 body {
   background-color: lime !important;
 }
+.logo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  background-color: black;
+}
