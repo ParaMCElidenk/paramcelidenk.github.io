@@ -19,3 +19,37 @@ header {
   margin: 0 auto 15px auto;
   object-fit: cover;
 }
+.links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.youtube {
+  background-color: #ff0000;
+}
+
+.discord {
+  background-color: #5865F2;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+}
+
