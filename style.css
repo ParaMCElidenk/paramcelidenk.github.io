@@ -19,13 +19,3 @@ header {
   margin: 0 auto 15px auto;
   object-fit: cover;
 }
-
-}
-.logo {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  overflow: hidden;
-  object-fit: cover;
-  background-color: black;
-}
