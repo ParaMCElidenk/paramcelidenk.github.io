@@ -2,28 +2,43 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>GD Oyuncusu</title>
-  <link rel="icon" href="favicon.png">
-  <link rel="stylesheet" href="style.css">
+  <title>Yükleniyor...</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0f0f0f;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 26px;
+      opacity: 1;
+      transition: opacity 0.8s ease;
+    }
+
+    body.fade-out {
+      opacity: 0;
+    }
+  </style>
+
+  <script>
+    // 2.2 sn sonra fade başlasın
+    setTimeout(() => {
+      document.body.classList.add("fade-out");
+    }, 2200);
+
+    // 3 sn sonra ana sayfaya geç
+    setTimeout(() => {
+      window.location.href = "home.html";
+    }, 3000);
+  </script>
 </head>
 <body>
 
-<header class="fade-in">
-
-  <img src="logo.png" class="logo">
-  <h1>GD Oyuncusu</h1>
-  <p>Oyun ve Teknoloji</p>
-
-  <div class="live-status offline">
-    ⚫ Şu an OFFLINE
-  </div>
-
-  <div class="social-links">
-    <a href="https://kick.com/baharelidenk" target="_blank" class="social-btn kick">Kick</a>
-    <a href="https://www.youtube.com/@umutcreator" target="_blank" class="social-btn youtube">YouTube</a>
-  </div>
-
-</header>
+  Yükleniyor...
 
 </body>
 </html>
