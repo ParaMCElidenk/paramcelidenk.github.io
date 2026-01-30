@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <title>Yükleniyor...</title>
 
-  <!-- 3 saniye sonra ana sayfaya geç -->
   <script>
-    setTimeout(function () {
-      window.location.href = "index.html";
-    }, 3000); // 3000 ms = 3 saniye
+    setTimeout(() => {
+      window.location.href = "home.html";
+    }, 3000);
   </script>
 
   <style>
@@ -35,7 +34,6 @@
       margin-bottom: 40px;
     }
 
-    /* WINDOWS TARZI DÖNEN HALKA */
     .spinner {
       width: 64px;
       height: 64px;
@@ -44,19 +42,18 @@
 
     .spinner div {
       transform-origin: 32px 32px;
-      animation: spin 1.2s linear infinite;
+      animation: fade 1.2s linear infinite;
     }
 
     .spinner div:after {
-      content: " ";
-      display: block;
+      content: "";
       position: absolute;
       top: 3px;
       left: 29px;
       width: 6px;
       height: 18px;
-      border-radius: 20%;
       background: white;
+      border-radius: 20%;
     }
 
     .spinner div:nth-child(1) { transform: rotate(0deg); animation-delay: -1.1s; }
@@ -72,7 +69,7 @@
     .spinner div:nth-child(11){ transform: rotate(300deg); animation-delay: -0.1s; }
     .spinner div:nth-child(12){ transform: rotate(330deg); animation-delay: 0s; }
 
-    @keyframes spin {
+    @keyframes fade {
       0% { opacity: 1; }
       100% { opacity: 0; }
     }
@@ -81,7 +78,7 @@
 <body>
 
   <h1>GDOyuncusu-github-io.pages.dev</h1>
-  <p>yükleniyor... Lütfen bekleyin</p>
+  <p>yükleniyor... lütfen bekleyin</p>
 
   <div class="spinner">
     <div></div><div></div><div></div><div></div><div></div><div></div>
