@@ -133,4 +133,66 @@ header {
   70% { box-shadow: 0 0 0 15px rgba(225,6,0,0); }
   100% { box-shadow: 0 0 0 0 rgba(225,6,0,0); }
 }
+header {
+  background-color: #8b1c1c;
+  text-align: center;
+  padding: 50px 20px;
+  color: white;
+}
+
+.logo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* CANLI etiketi */
+.live-status {
+  margin: 20px auto;
+  display: inline-block;
+  background: #e10600;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+}
+
+/* Sosyal alan */
+.social-links {
+  margin-top: 20px;
+}
+
+.social-btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.social-btn:hover {
+  transform: scale(1.08);
+}
+
+.kick {
+  background-color: #00ff6a;
+  color: black;
+}
+
+.youtube {
+  background-color: #ff0000;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(225,6,0,0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(225,6,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(225,6,0,0); }
+}
 
