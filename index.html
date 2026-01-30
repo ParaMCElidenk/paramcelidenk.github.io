@@ -3,45 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Yükleniyor...</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="loading.css">
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
+  <!-- OTOMATİK GEÇİŞ -->
+  <script>
+    setTimeout(() => {
+      window.location.href = "home.html";
+    }, 2500); // 2.5 saniye
+  </script>
+</head>
+<body>
 
-    body {
-      background: url("loading.png") no-repeat center center;
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+  <div class="loader-container">
+    <div class="spinner"></div>
+    <p>Yükleniyor...</p>
+  </div>
 
-    /* Windows tarzı dönen nokta halkası */
-    .spinner {
-      position: absolute;
-      bottom: 80px;
-      width: 60px;
-      height: 60px;
-    }
-
-    .spinner div {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: white;
-      border-radius: 50%;
-      animation: spin 1.2s linear infinite;
-      transform-origin: 30px 30px;
-    }
-
-    .spinner div:nth-child(1) { transform: rotate(0deg) translate(30px); animation-delay: -0.11s; }
-    .spinner div:nth-child(2) { transform: rotate(45deg) translate(30px); animation-delay: -0.22s; }
-    .spinner div:nth-child(3) { transform: rotate(90deg) translate(30px); animation-delay: -0.33s; }
-    .spinner div:nth-child(4) { transform: rotate(135deg) transl
+</body>
+</html>
