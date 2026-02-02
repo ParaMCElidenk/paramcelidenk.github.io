@@ -2,7 +2,9 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>GD Intro</title>
+<title>GD Oyuncusu</title>
+
+<link rel="icon" href="Favicon.png">
 
 <style>
 html, body {
@@ -15,33 +17,32 @@ html, body {
 }
 
 /* START */
-#start {
+.start-screen {
   position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #00ff66;
-  font-size: 42px;
+  color: #00ff88;
+  font-size: 36px;
   cursor: pointer;
-  text-shadow: 0 0 30px #00ff66;
+  text-shadow: 0 0 25px #00ff88;
   animation: pulse 1s infinite alternate;
   z-index: 10;
 }
 
 @keyframes pulse {
-  from { opacity: .4; }
+  from { opacity: 0.4; }
   to { opacity: 1; }
 }
 
 /* VIDEO */
-#video {
+video {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: 1;
   display: none;
 }
 
@@ -58,14 +59,13 @@ html, body {
 
 <body>
 
-<div id="start">▶ BAŞLA</div>
+<div class="start-screen" id="start">▶ BAŞLA</div>
 
-<video id="video" playsinline preload="auto">
+<video id="video">
   <source src="intro.mp4" type="video/mp4">
-  Tarayıcı video desteklemiyor.
 </video>
 
-<audio id="audio" preload="auto">
+<audio id="audio">
   <source src="intro.mp3" type="audio/mpeg">
 </audio>
 
@@ -74,28 +74,21 @@ const start = document.getElementById("start");
 const video = document.getElementById("video");
 const audio = document.getElementById("audio");
 
-start.onclick = async () => {
+start.onclick = () => {
   start.style.display = "none";
+
   video.style.display = "block";
+  video.play();
 
-  try {
-    audio.volume = 1;
-    video.currentTime = 0;
-    audio.currentTime = 0;
-
-    await audio.play();
-    await video.play();
-  } catch (e) {
-    alert("Video veya ses oynatılamadı. Dosya adı / format kontrol et.");
-    console.error(e);
-  }
+  audio.volume = 1;
+  audio.play();
 
   setTimeout(() => {
     document.body.classList.add("fade-out");
     setTimeout(() => {
       window.location.href = "home.html";
     }, 1000);
-  }, 12000);
+  }, 12000); // ⏱️ 12 SANİYE
 };
 </script>
 
