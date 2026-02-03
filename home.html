@@ -3,8 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <title>GD Oyuncusu</title>
+
 <link rel="icon" href="Favicon.png">
 <link rel="stylesheet" href="style.css">
+
+<style>
+/* STATUS */
+.status {
+  font-size: 20px;
+  margin: 20px;
+  font-weight: bold;
+}
+.online {
+  color: #00ff66;
+  text-shadow: 0 0 10px #00ff66;
+}
+.offline {
+  color: #ff4444;
+}
+
+/* VIDEO AREA */
+.video-area {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 15px;
+  background: #111;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0,0,0,.6);
+}
+
+.video-area h2 {
+  margin-bottom: 15px;
+}
+
+iframe {
+  width: 100%;
+  height: 480px;
+  border-radius: 12px;
+  border: none;
+}
+</style>
 </head>
 
 <body>
@@ -14,7 +52,7 @@
   <h1>GD Oyuncusu</h1>
   <p>Oyun ve Teknoloji</p>
 
-  <div class="status offline">⚫ OFFLINE</div>
+  <div id="status" class="status offline">⚫ OFFLINE</div>
 
   <div class="links">
     <a href="https://kick.com/baharelidenk" target="_blank">Kick</a>
@@ -22,9 +60,51 @@
   </div>
 </header>
 
-<footer>
-  © 2026 GD Oyuncusu
-</footer>
+<!-- YOUTUBE -->
+<div class="video-area">
+  <h2>YouTube</h2>
+
+  <!-- CANLI / VIDEO -->
+  <iframe
+    id="youtubeFrame"
+    src="https://www.youtube.com/embed?listType=user_uploads&list=umutcreator"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<footer>© 2026 GD Oyuncusu</footer>
+
+<script>
+/*
+  YOUTUBE CANLI MANTIĞI (API OLMADAN):
+  - Önce LIVE embed denenir
+  - Yüklenmezse otomatik videoya düşer
+*/
+
+const statusEl = document.getElementById("status");
+const ytFrame = document.getElementById("youtubeFrame");
+
+let liveDetected = false;
+
+/* LIVE dene */
+ytFrame.src = "https://www.youtube.com/embed/live_stream?channel=UC8u4xgY9X2p6k9XqN5xYpVQ";
+
+ytFrame.onload = () => {
+  liveDetected = true;
+  statusEl.textContent = "🔴 YOUTUBE'DA CANLI";
+  statusEl.className = "status online";
+};
+
+/* 5 sn sonra live yoksa normal videoya dön */
+setTimeout(() => {
+  if (!liveDetected) {
+    ytFrame.src = "https://www.youtube.com/embed?listType=user_uploads&list=umutcreator";
+    statusEl.textContent = "⚫ OFFLINE";
+    statusEl.className = "status offline";
+  }
+}, 5000);
+</script>
 
 </body>
 </html>
